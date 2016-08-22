@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date Validations</title>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/start/jquery-ui.css">
+	<script src="http://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		function validateForm() {
+		    var x = document.forms["f1"]["full_name"].value;
+		    if (x == null || x == "") {
+		        alert("Your name can't be blank!");
+		        return false;
+		    }
+		    else{
+				var v1 = $('#from').val();
+				var v2 = $('#to').val();
+				var v3 = $('#full_name').val();
+				alert('Hello ' + v3 + '! Your cruise leaves on ' + v1 + ' and returns on ' + v2 +' .');		    	
+		    }
+		}
+		$(document).ready(function(){
+			$('#from').datepicker();
+			$('#to').datepicker();
+			$('input[type=submit]').click(function(){
+				validateForm();
+				return false
+			});
+		});
+	</script>
+	<style type="text/css">
+		body{
+			width: 950px;
+			height: auto;
+			margin: 0px auto;
+			text-align: center;
+		}
+	</style>	
+</head>
+<body>
+	<h2>Welcom to the codingDojo plan-a-cruise!</h2>
+	<div>
+		<form id="f1">
+			<p>From:<input type="text" name="from" id="from"></p>
+			<p>To:<input type="text" name="to" id="to"></p>
+			<p>Name:<input type="text" name="full_name" id="full_name"></p>
+			<p><input type="submit" name="Check dates!"></p>
+		</form>
+	</div>
+</body>
+</html>
